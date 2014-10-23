@@ -2,6 +2,8 @@ PassengerHighPerformance on
 PassengerPoolIdleTime 1500
 # PassengerMaxRequests 1000
 PassengerStatThrottleRate 120
+<% if `passenger-config --version`.split('.').first.to_i < 4  %>
 RackAutoDetect Off
 RailsAutoDetect Off
+<% end %>
 PassengerTempDir /var/run/rubygem-passenger
